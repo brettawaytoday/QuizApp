@@ -13,6 +13,10 @@
 		DE58A2FF25E36273004F0BCF /* TabelViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58A2FE25E36273004F0BCF /* TabelViewHelpers.swift */; };
 		DE58A30525E369D5004F0BCF /* CorrectAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE58A30425E369D5004F0BCF /* CorrectAnswerCell.xib */; };
 		DE58A30925E40C9F004F0BCF /* WrongAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE58A30825E40C9F004F0BCF /* WrongAnswerCell.xib */; };
+		DE58A30D25E48AFB004F0BCF /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58A30C25E48AFB004F0BCF /* UITableViewExtensions.swift */; };
+		DE58A31125E48B4C004F0BCF /* PresentableAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58A31025E48B4C004F0BCF /* PresentableAnswer.swift */; };
+		DE58A31525E48B8F004F0BCF /* CorrectAnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58A31425E48B8F004F0BCF /* CorrectAnswerCell.swift */; };
+		DE58A31925E48BAF004F0BCF /* WrongAnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58A31825E48BAF004F0BCF /* WrongAnswerCell.swift */; };
 		DED0E10F25C2259400BAD3C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED0E10E25C2259400BAD3C4 /* AppDelegate.swift */; };
 		DED0E11125C2259400BAD3C4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED0E11025C2259400BAD3C4 /* SceneDelegate.swift */; };
 		DED0E11825C2259500BAD3C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DED0E11725C2259500BAD3C4 /* Assets.xcassets */; };
@@ -39,6 +43,10 @@
 		DE58A2FE25E36273004F0BCF /* TabelViewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabelViewHelpers.swift; sourceTree = "<group>"; };
 		DE58A30425E369D5004F0BCF /* CorrectAnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CorrectAnswerCell.xib; sourceTree = "<group>"; };
 		DE58A30825E40C9F004F0BCF /* WrongAnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WrongAnswerCell.xib; sourceTree = "<group>"; };
+		DE58A30C25E48AFB004F0BCF /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
+		DE58A31025E48B4C004F0BCF /* PresentableAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableAnswer.swift; sourceTree = "<group>"; };
+		DE58A31425E48B8F004F0BCF /* CorrectAnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectAnswerCell.swift; sourceTree = "<group>"; };
+		DE58A31825E48BAF004F0BCF /* WrongAnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongAnswerCell.swift; sourceTree = "<group>"; };
 		DED0E10B25C2259400BAD3C4 /* QuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED0E10E25C2259400BAD3C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DED0E11025C2259400BAD3C4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,9 +107,13 @@
 				DED0E14F25C2291900BAD3C4 /* QuestionViewController.swift */,
 				DED0E15425C22A7D00BAD3C4 /* QuestionViewController.xib */,
 				DE58A2F425E350DC004F0BCF /* ResultsViewController.swift */,
+				DE58A31025E48B4C004F0BCF /* PresentableAnswer.swift */,
+				DE58A31425E48B8F004F0BCF /* CorrectAnswerCell.swift */,
+				DE58A31825E48BAF004F0BCF /* WrongAnswerCell.swift */,
 				DE58A2F825E35287004F0BCF /* ResultsViewController.xib */,
 				DE58A30425E369D5004F0BCF /* CorrectAnswerCell.xib */,
 				DE58A30825E40C9F004F0BCF /* WrongAnswerCell.xib */,
+				DE58A30C25E48AFB004F0BCF /* UITableViewExtensions.swift */,
 			);
 			path = QuizApp;
 			sourceTree = "<group>";
@@ -221,8 +233,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE58A30D25E48AFB004F0BCF /* UITableViewExtensions.swift in Sources */,
 				DED0E10F25C2259400BAD3C4 /* AppDelegate.swift in Sources */,
+				DE58A31525E48B8F004F0BCF /* CorrectAnswerCell.swift in Sources */,
 				DED0E11125C2259400BAD3C4 /* SceneDelegate.swift in Sources */,
+				DE58A31125E48B4C004F0BCF /* PresentableAnswer.swift in Sources */,
+				DE58A31925E48BAF004F0BCF /* WrongAnswerCell.swift in Sources */,
 				DED0E15025C2291900BAD3C4 /* QuestionViewController.swift in Sources */,
 				DE58A2F525E350DC004F0BCF /* ResultsViewController.swift in Sources */,
 			);
