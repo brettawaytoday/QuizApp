@@ -6,7 +6,7 @@
 //
 
 protocol ViewControllerFactory {
-    func questionViewController( for question: String, answerCallback: (String) -> Void) -> UIViewController
+    func questionViewController( for question: String, answerCallback: @escaping (String) -> Void) -> UIViewController
 }
 
 import UIKit
@@ -23,7 +23,7 @@ class NavigationControllerRouter: Router {
     
     func routeTo(question: String, answerCallback: @escaping (String) -> Void) {
         let viewController = factory.questionViewController(for: question, answerCallback: answerCallback)
-        navigationController.pushViewController(viewController, animated: false)
+        navigationController.pushViewController(viewController, animated: true)
     }
     
     func routeTo(result: Result<String, String>) {
