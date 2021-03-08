@@ -11,6 +11,9 @@ enum Question<T: Hashable> : Hashable {
     case singleAnswer(T)
     case multipleAnswer(T)
     
+    ///Method to silence the hashValue Depricated warning.
+    func hash(into hasher: inout Hasher) {}
+    
     var hashValue: Int {
         switch self {
         case .singleAnswer(let value):
