@@ -5,12 +5,13 @@
 //  Created by Brett Christian on 24/02/21.
 //
 
-protocol ViewControllerFactory {
-    func questionViewController( for question: String, answerCallback: @escaping (String) -> Void) -> UIViewController
-}
 
 import UIKit
 import QuizEngine
+
+protocol ViewControllerFactory {
+    func questionViewController( for question: String, answerCallback: @escaping (String) -> Void) -> UIViewController
+}
 
 class NavigationControllerRouter: Router {
     private let navigationController: UINavigationController
