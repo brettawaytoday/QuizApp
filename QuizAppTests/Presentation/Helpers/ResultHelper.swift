@@ -5,10 +5,14 @@
 //  Created by Brett Christian on 10/03/21.
 //
 
-import QuizEngine
+@testable import QuizEngine
 
 
 extension Result: Hashable {
+    
+    static func make(answers: [Question: Answer] = [:], score: Int = 0) -> Result<Question, Answer> {
+        return Result(answers: answers, score: score)
+    }
     
     ///Method to silence the hashValue Depricated warning.
     public func hash(into hasher: inout Hasher) {
