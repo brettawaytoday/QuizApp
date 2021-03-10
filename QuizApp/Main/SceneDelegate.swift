@@ -26,14 +26,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     private func makeRootViewController() -> UINavigationController {
         let question1 = Question.singleAnswer("Where was Brett born?")
-        
+
         let option1 = "South Africa"
         let option2 = "Zimbabwe"
         let option3 = "Botswana"
         let options1 = [option1, option2, option3]
-        
+
         let question2 = Question.multipleAnswer("Which countries has Brett lived in?")
-        
+
         let option4 = "Russia"
         let option5 = "Zimbabwe"
         let option6 = "Georgia"
@@ -41,15 +41,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let option8 = "South Africa"
         let option9 = "England"
         let options2 = [option4, option5, option6, option7, option8, option9]
-        
+
         let questions = [question1, question2]
-        
+
         let correctAnswers = [question1: [option2], question2: [option5, option6, option7, option8]]
-        
+
         let navigationController = UINavigationController()
         let factory = iOSViewControllerFactory(questions: questions, options: [question1: options1, question2: options2], correctAnswers: correctAnswers)
         let router = NavigationControllerRouter(navigationController, factory: factory)
-        
+
         game = startGame(questions: questions, router: router, correctAnswers: correctAnswers)
         return navigationController
     }
