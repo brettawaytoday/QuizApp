@@ -6,16 +6,15 @@
 //
 
 import UIKit
+import QuizEngine
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
+    var game: Game<Question<String>, [String], NavigationControllerRouter>?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        
-        
         return true
     }
 

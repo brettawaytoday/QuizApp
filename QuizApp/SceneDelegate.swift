@@ -6,36 +6,52 @@
 //
 
 import UIKit
+import QuizEngine
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
-
+    
+    var game: Game<Question<String>, [String], NavigationControllerRouter>?
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-//        guard let _ = (scene as? UIWindowScene) else { return }
+        
         guard let windowScene = (scene as? UIWindowScene) else { return }
-                window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-                window?.windowScene = windowScene
-//        let viewConroller = QuestionViewController(question: "Question", options: ["Answer one", "Answer two"]) {
-//            print($0)
-//        }
-//        _ = viewConroller.view
-//        viewConroller.tableView.allowsMultipleSelection = false
+        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window?.windowScene = windowScene
         
-        let viewController = ResultsViewController(summary: "You got 1/2 correct", answers: [
-            PresentableAnswer(question: "Question", answer: "Good", wrongAnswer: nil),
-            PresentableAnswer(question: "Second question", answer: "This is the one", wrongAnswer: "Woops, not this one")
-        ])
+        window?.rootViewController = makeRootViewController()
+        window?.makeKeyAndVisible()
+    }
+    
+    private func makeRootViewController() -> UINavigationController {
+        let question1 = Question.singleAnswer("Where was Brett born?")
         
-//        let window = UIWindow(frame: UIScreen.main.bounds)
-//        window.rootViewController = viewController
-//        window.makeKeyAndVisible()
-        window?.rootViewController = viewController
-                window?.makeKeyAndVisible()
+        let option1 = "South Africa"
+        let option2 = "Zimbabwe"
+        let option3 = "Botswana"
+        let options1 = [option1, option2, option3]
+        
+        let question2 = Question.multipleAnswer("Which countries has Brett lived in?")
+        
+        let option4 = "Russia"
+        let option5 = "Zimbabwe"
+        let option6 = "Georgia"
+        let option7 = "Botswana"
+        let option8 = "South Africa"
+        let option9 = "England"
+        let options2 = [option4, option5, option6, option7, option8, option9]
+        
+        let questions = [question1, question2]
+        
+        let correctAnswers = [question1: [option2], question2: [option5, option6, option7, option8]]
+        
+        let navigationController = UINavigationController()
+        let factory = iOSViewControllerFactory(questions: questions, options: [question1: options1, question2: options2], correctAnswers: correctAnswers)
+        let router = NavigationControllerRouter(navigationController, factory: factory)
+        
+        game = startGame(questions: questions, router: router, correctAnswers: correctAnswers)
+        return navigationController
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
